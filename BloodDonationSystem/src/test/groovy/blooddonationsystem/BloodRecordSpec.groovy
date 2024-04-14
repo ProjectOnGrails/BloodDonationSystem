@@ -3,7 +3,7 @@ package blooddonationsystem
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class ReservedSpec extends Specification implements DomainUnitTest<Reserved> {
+class BloodRecordSpec extends Specification implements DomainUnitTest<BloodRecord> {
 
     def setup() {
     }
