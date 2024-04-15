@@ -1,6 +1,7 @@
 package blooddonationsystem
 
 import com.BloodDonationSystem.Requestmap
+import com.BloodDonationSystem.User
 
 class BootStrap {
 
@@ -12,6 +13,7 @@ class BootStrap {
                 '/logout', '/logout.*', '/logout/*']) {
             new Requestmap(url: url, configAttribute: 'permitAll').save()
         }
+        new User(username: "Smriti",password: "admin").save()
     }
     def destroy = {
     }
