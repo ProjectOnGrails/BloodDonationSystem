@@ -4,6 +4,7 @@ class Patient {
     String name
     String blood_group
     int quantity_req
+    int age
     String hospitalname
     Date dateCreated
     Date lastUpdated

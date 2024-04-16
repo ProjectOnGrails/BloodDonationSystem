@@ -1,6 +1,7 @@
 package com.BloodDonationSystem
 
 enum Status {
+    REQUEST("Requested"),
     RESERVED("Reserved"),
     DISPATCH("Dispatched")
 
