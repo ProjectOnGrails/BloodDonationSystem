@@ -1,45 +1,70 @@
-/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
 .sidebar {
-    background-color: #343a40; /* Sidebar background color */
-    color: #fff; /* Text color */
+    background-color: #333;
+    color: #fff;
+    width: 250px;
     height: 100vh;
-    position: absolute;
-}
-
-.sidebar-content {
-    padding-top: 20px;
-}
-
-.sidebar-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar-content ul li {
-    padding: 10px 20px;
-    border-bottom: 1px solid #555; /* Border color between sidebar items */
-}
-
-.sidebar-content ul li:last-child {
-    border-bottom: none; /* Remove border from the last sidebar item */
-}
-
-.user-info {
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.sidebar-content ul li:hover {
-    background-color: #555; /* Background color on hover */
+.user {
+    text-align: center;
 }
 
-.user-info:hover {
-    background-color: #555; /* Background color on hover */
+.user button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
-.sidebar-content ul li:last-child {
-    border-bottom: none; /* Remove border from the last sidebar item */
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: #555;
 }
 
 .content {
+    margin-left: 270px;
     padding: 20px;
+}
+button > a {
+    color: #fff; /* Set text color to white */
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content {
+        margin-left: 0;
+    }
 }

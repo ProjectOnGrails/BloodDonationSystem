@@ -17,30 +17,28 @@
 
 <body>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 sidebar">
-            <div class="sidebar-content">
-                <ul class="list-unstyled">
-                    <li>Home</li>
-                    <li>About</li>
-                </ul>
-            </div>
-            <div class="user-info mt-auto">
-                <sec:ifLoggedIn>
-                    <sec:loggedInUserInfo field='username'/>
-                </sec:ifLoggedIn>
-                <sec:ifNotLoggedIn>
-                    <a  href="/login/auth">
-                        LogIn
-                    </a>
-
-                </sec:ifNotLoggedIn></div>
-        </div>
-        <div class="col-md-9 content">
-            <g:layoutBody/>
-        </div>
+<div class="sidebar">
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Doner</a></li>
+            <li><a href="#">Blood Records</a></li>
+        </ul>
+        <hr color="white">
+    </nav>
+    <div class="user">
+        <sec:ifLoggedIn>
+            <h4>Hello <sec:loggedInUserInfo field='username'/></h4>
+            <button ><a href="#" >Logout</a></button>
+        </sec:ifLoggedIn>
+        <sec:ifNotLoggedIn>
+            <button ><a href="/login/auth" >LogIn</a></button>
+        </sec:ifNotLoggedIn>
     </div>
+</div>
+<div class="col-md-9 content">
+    <g:layoutBody/>
 </div>
 
 <asset:javascript src="application.js"/>
