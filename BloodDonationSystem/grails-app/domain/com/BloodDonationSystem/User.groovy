@@ -14,6 +14,8 @@ class User implements Serializable {
     static belongsTo = [employee: Employee]
     String username
     String password
+
+
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked

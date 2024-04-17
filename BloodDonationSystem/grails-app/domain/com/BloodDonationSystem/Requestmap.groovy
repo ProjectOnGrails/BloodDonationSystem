@@ -17,6 +17,8 @@ class Requestmap implements Serializable {
 	HttpMethod httpMethod
 	String url
 
+
+
 	static constraints = {
 		configAttribute nullable: false, blank: false
 		httpMethod nullable: true

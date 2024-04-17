@@ -9,3 +9,8 @@
 //= require popper.min
 //= require bootstrap
 //= require_self
+function toggleSidePanel() {
+    var sidepanel = document.querySelector('.sidepanel');
+    sidepanel.classList.toggle('show');
+}
+

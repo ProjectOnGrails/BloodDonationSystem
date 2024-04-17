@@ -5,13 +5,7 @@
     <title>Welcome to Grails</title>
 </head>
 <body>
-<sec:ifLoggedIn>
-    Welcome Back!
-    <sec:loggedInUserInfo field='username'/>
-</sec:ifLoggedIn>
-<sec:ifNotLoggedIn>
-    <h1>Login please</h1>
-</sec:ifNotLoggedIn>
+
 <content tag="nav">
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>

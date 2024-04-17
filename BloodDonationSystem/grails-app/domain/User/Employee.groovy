@@ -19,4 +19,10 @@ class Employee {
         lastUpdated nullable: true
         updatedBy nullable:  true
     }
+    def beforeinsert = {
+        dateCreated = new Date()
+    }
+    def beforeupdate = {
+        lastUpdated = new Date()
+    }
 }
