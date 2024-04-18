@@ -24,6 +24,7 @@
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Doner</a></li>
             <li><a href="#">Blood Records</a></li>
+            <li><a href="/role/index">Role</a></li>
         </ul>
         <hr color="white">
     </nav>
