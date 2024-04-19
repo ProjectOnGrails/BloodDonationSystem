@@ -42,6 +42,5 @@
     <g:layoutBody/>
 </div>
 
-<asset:javascript src="application.js"/>
 </body>
 </html>
