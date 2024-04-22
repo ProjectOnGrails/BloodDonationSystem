@@ -46,25 +46,37 @@ class RoleController {
         redirect(action: "index")
 
     }
+    def edit()
+    {
+        def id = params.id
+        Role roleInstance = Role.findById(id)
+        render(template: "edit",model: [data:roleInstance])
+    }
 
     @Transactional
+
     def update() {
-        try {
-            def param1 = params.param1
-            def param2 = params.param2
-            Role role = Role.get(param1)
-            if (role) {
-                role.authority = param2
-                role.save()
-                flash.message = "Role updated successfully."
-                redirect(action: "index")
-            } else {
-                flash.message = "Role update failed. Role not found."
+        def roleId = params.id
+        def roleAuthority = params.authority
+        Role roleInstance = Role.findById(roleId)
+        if(roleInstance){
+            try {
+                roleInstance.authority = roleAuthority
+                if(roleInstance.save(flush:true)) {
+                    flash.message = "${message(code: 'default.updated.message', args: [message(code: 'Role'), roleInstance.authority])}"
+                    redirect(action:"index")
+                }else {
+                    flash.message = "Error while updating role."
+                    redirect(action: "index")
+                }
+            }catch(e) {
+                flash.error = "Role update failed: ${e.message}"
                 redirect(action: "index")
             }
         }
-        catch (e) {
-            flash.message = "Error while updating role: $e.message"
+        else
+        {
+            flash.error = "${message(code: 'default.not.found.message', args: [message(code: 'Role'), ""])}"
             redirect(action: "index")
         }
     }
