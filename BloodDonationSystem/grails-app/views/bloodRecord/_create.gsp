@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label for="status">Status:</label>
                             <select class="form-control" id="status" name="status" required>
-                                <option value="">Select Semester</option>
+                                <option value="">Select</option>
                                 <g:each in="${Status.values()}" var="status">
                                     <option value="${status}">${status}</option>
                                 </g:each>

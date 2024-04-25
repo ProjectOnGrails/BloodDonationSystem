@@ -17,18 +17,17 @@ class BloodRecordController {
             BloodRecord record = new BloodRecord(params)
             def user = springSecurityService.currentUser
             record.createdBy = user
-            if (record.save(flush:true)) {
+            if (record.save()) {
                 flash.message = "Data saved successfully"
                 redirect(action: "index")
             } else {
-                flash.message = "Data cannot be saved."
+                flash.message = "Data cannot be saved"
                 redirect(action: "index")
             }
-
         }
         catch (Exception e) {
             println e;
-            flash.message = "Cannot connect to databaase"
+            flash.message = "Cannot connect to databaase :${e.message}"
             redirect(action: "index")
         }
     }
@@ -39,9 +38,9 @@ class BloodRecordController {
             def record = BloodRecord.get(id)
             if (record) {
                 record.delete()
-                flash.message = "Role Deleted Successfully"
+                flash.message = "Record Deleted Successfully"
             } else {
-                flash.message = "Role not found"
+                flash.message = "Record not found"
             }
         }
         catch (Exception e) {

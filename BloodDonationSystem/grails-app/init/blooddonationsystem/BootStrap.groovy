@@ -27,7 +27,7 @@ class BootStrap {
         def role = new Role(
                 authority: "ROLE_ADMIN"
         ).save()
-        new Employee(name:"Smriti Guragain", age: 23, gender: Gender.FEMALE, join_date: new Date(), phone:"9825111243", email: "smritiguragain111@gmail.com", createdBy: "Smriti Guragain", user: user).save()
+        new Employee(name:"Smriti Guragain", age: 23, gender: Gender.Female, join_date: new Date(), phone:"9825111243", email: "smritiguragain111@gmail.com", createdBy: "Smriti Guragain", user: user).save()
         new UserRole(
                 user: user,
                 role: role
